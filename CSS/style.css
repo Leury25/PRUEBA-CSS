@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    color:rgb(0, 0, 0);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Mate SC', serif;
+}
+
+:root{
+    --color1:#e93b81;
+    --color2:#f5abc9;
+    --color3:#ffe5e2;
+    --color4:#000000;
+}
+
+.contenedor{
+    width: 100%;
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-template-rows: repeat(6, auto);
+
+    grid-template-areas:"header menu menu menu"
+                        "portada portada portada portada"
+                        "slogan slogan slogan slogan"
+                        "categorias categorias categorias categorias"
+                        "box1 box2 box3 box4"
+                        "nuevos nuevos nuevos nuevos"
+                        "box5 box6 box7 box8"
+                        "populares populares populares populares"
+                        "box9 box10 box11 box12";
+}
+/* PORTADA */
+header{
+    height: 100px;
+    background-color: #fff;
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header img{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    box-shadow: 1px 1px 7px rgb(161, 161, 161);
+}
+
+.menu{
+    grid-area: menu ;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    grid-gap:  20px;
+}
+
+.menu a{
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#btn-menu{
+    display: none;
+}
+
+label img{
+    width: 80%;
+}
+
+label{
+    display: none;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+}
+
+label:hover{
+    cursor: pointer;
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
+.portada{
+    grid-area: portada;
+    height: 600px;
+    background: rgba(233, 59, 129, 0.513);
+    background-image: linear-gradient(90deg, rgba(233,59,129,0.5) 0%, rgba(245,171,201,0.5) 77%, rgba(255,229,226,0.5) 100%), url(../IMG/portada.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+/* SLOGAN */
+.slogan{
+    padding-top: 250px;
+    text-align: center;
+    grid-area: slogan ;
+}
+
+.slogan p{
+    font-size:30px;
+    font-weight: 900;
+}
+
+.slogan a{
+    display: inline-block;
+    margin:60px 10px;
+    padding: 10px 20px;
+    background-color: #e93b81;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+/* CAJAS */
+.box{
+    height: 200px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+/* IMG */
+.img{
+    width: 100%;
+    height: 70%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-image: url(../IMG/portada.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.categorias, .nuevos, .populares{
+    margin-top: 100px;
+} 
+
+/* CATEGORIAS */
+.categorias{
+    grid-area: categorias;
+    text-align: center;
+}
+
+.box1{
+    grid-area: box1;
+}
+
+.box2{
+    grid-area:box2 ;
+}
+
+.box3{
+    grid-area:box3 ;
+}
+
+.box4{
+    grid-area:box4 ;
+}
+
+.img1{
+    background-image: url(../IMG/labial.jpg);
+}
+.img2{
+    background-image: url(../IMG/cara.jpg);
+}
+.img3{
+    background-image: url(../IMG/uñas.jpg);
+}
+.img4{
+    background-image: url(../IMG/perfume.jpg);
+}
+
+/* NUEVOS */
+
+.nuevos{
+    grid-area: nuevos;
+    text-align: center;
+}
+
+.box5{
+    grid-area: box5;
+}
+
+.box6{
+    grid-area:box6 ;
+}
+
+.box7{
+    grid-area:box7 ;
+}
+
+.box8{
+    grid-area:box8 ;
+}
+
+/* POPULARES */
+
+.populares{
+    grid-area: populares;
+    text-align: center;
+}
+
+.box9{
+    grid-area: box9;
+}
+
+.box10{
+    grid-area:box10;
+}
+
+.box11{
+    grid-area:box11;
+}
+
+.box12{
+    grid-area:box12 ;
+}
+
+
+@media screen and (max-width: 1024px){
+    .contenedor{
+        grid-template-areas:"header header header header"
+                            "menu menu menu menu"
+                            "portada portada portada portada"
+                            "categorias categorias categorias categorias"
+                            "box1 box1 box2 box2" 
+                            "box3 box3 box4 box4"
+                            "nuevos nuevos nuevos nuevos"
+                            "box5 box5 box6 box6"
+                            "box7 box7 box8 box8"
+                            "populares populares populares populares"
+                            "box9 box9 box10 box10"
+                            "box11 box11 box12 box12";
+    }
+    header{
+        justify-content: center;
+    }
+
+    header img{
+        margin-right: 40px;
+    }
+
+    .menu{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 490px){
+    .contenedor{
+        grid-template-areas:"header header header header"
+                            "menu menu menu menu"
+                            "portada portada portada portada"
+                            "categorias categorias categorias categorias"
+                            "box1 box1 box1 box1" 
+                            "box2 box2 box2 box2"
+                            "box3 box3 box3 box3" 
+                            "box4 box4 box4 box4"
+                            "nuevos nuevos nuevos nuevos"
+                            "box5 box5 box5 box5" 
+                            "box6 box6 box6 box6"
+                            "box7 box7 box7 box7" 
+                            "box8 box8 box8 box8"
+                            "populares populares populares populares"
+                            "box9 box9 box9 box9" 
+                            "box10 box10 box10 box10"
+                            "box11 box11 box11 box11" 
+                            "box12 box12 box12 box12";
+    }
+
+    .menu{
+        display:none;
+    }
+}
+
